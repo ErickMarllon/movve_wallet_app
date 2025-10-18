@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +65,42 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+@import "tailwindcss";
+
+:root {
+  --background-alt: #111111;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --green: #38cd02;
+  --greendark: #217b00;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
+  --color-foreground: var(--foreground);
+  --color-green: var(--green);
+  --color-greendark: var(--greendark);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --breakpoint-xs: 20rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: lato, Helvetica, sans-serif;
+}
+
+#viewer {
+  display: none !important;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -1,0 +1,17 @@
+{
+  "resources": {
+    "title": "リソース",
+    "flowbite": "Flowbite",
+    "tailwind": "Tailwind CSS"
+  },
+  "followUs": {
+    "title": "フォローする",
+    "github": "Github",
+    "discord": "Discord"
+  },
+  "legal": {
+    "title": "法的情報",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsConditions": "利用規約"
+  }
+}

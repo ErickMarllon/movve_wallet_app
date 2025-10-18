@@ -1,35 +1,82 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { lazy, Suspense } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import LayoutWrapper from "./components/layout/LayoutWrapper";
+import { I18nProvider } from "./context/provider";
+import { PATH_PAGE } from "./routes/paths";
+import { LoadingPage } from "./views";
+
+const HomePage = lazy(() => import("./views/HomePage"));
+const MoviesPage = lazy(() => import("./views/MoviesPage"));
+const MoviePage = lazy(() => import("./views/MoviePage"));
+const FilePage = lazy(() => import("./views/FilePage"));
+const NotfoundPage = lazy(() => import("./views/NotfoundPage"));
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <I18nProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            index
+            element={
+              <Suspense fallback={<LoadingPage />}>
+                <LayoutWrapper>
+                  <HomePage />
+                </LayoutWrapper>
+              </Suspense>
+            }
+          />
+          <Route
+            path={PATH_PAGE.movies}
+            element={
+              <Suspense fallback={<LoadingPage />}>
+                <LayoutWrapper>
+                  <MoviesPage />
+                </LayoutWrapper>
+              </Suspense>
+            }
+          />
+          <Route
+            path={PATH_PAGE.file}
+            element={
+              <Suspense fallback={<LoadingPage />}>
+                <LayoutWrapper>
+                  <FilePage />
+                </LayoutWrapper>
+              </Suspense>
+            }
+          />
+          <Route
+            path={PATH_PAGE.movieWatch}
+            element={
+              <Suspense fallback={<LoadingPage />}>
+                <LayoutWrapper>
+                  <MoviePage />
+                </LayoutWrapper>
+              </Suspense>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<LoadingPage />}>
+                <NotfoundPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path={PATH_PAGE.notfound}
+            element={
+              <Suspense fallback={<LoadingPage />}>
+                <NotfoundPage />
+              </Suspense>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </I18nProvider>
+  );
 }
 
-export default App
+export default App;

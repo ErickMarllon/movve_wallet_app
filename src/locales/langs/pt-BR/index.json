@@ -1,0 +1,20 @@
+{
+  "header": {
+    "welcome": "Seja Bem-vindo(a)",
+    "subtitle": "Material de Apoio ao Licenciado"
+  },
+  "notice": {
+    "title": "ATENÇÃO",
+    "text": "Como Licenciado da Movve Wallet, é sua responsabilidade zelar pela integridade da marca e **seguir todas as diretrizes e políticas de boas práticas de uso descritas em seu contrato**. É essencial que você respeite essas políticas para garantir resultados positivos. Nenhuma conduta que vá além das normas exigidas pela empresa será aceita. **Este material é de uso exclusivo de Licenciados Autorizados Movve Wallet**.",
+    "obs": "**OBS: Este site é monitorado e atualizado diariamente.**"
+  },
+  "tutorials": {
+    "title": "Vídeos Tutoriais",
+    "clickHere": "Clique aqui"
+  },
+  "ApnSection": {
+    "presentationTitle": "Apresentação Plano de Négocio Movve Wallet",
+    "pdfButton": "PDF",
+    "pdfDownload": "PDF"
+  }
+}

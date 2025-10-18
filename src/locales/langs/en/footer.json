@@ -1,0 +1,17 @@
+{
+  "resources": {
+    "title": "Resources",
+    "flowbite": "Flowbite",
+    "tailwind": "Tailwind CSS"
+  },
+  "followUs": {
+    "title": "Follow us",
+    "github": "Github",
+    "discord": "Discord"
+  },
+  "legal": {
+    "title": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms & Conditions"
+  }
+}

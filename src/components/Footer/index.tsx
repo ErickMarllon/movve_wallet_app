@@ -1,0 +1,62 @@
+import SocialIcons from "./SocialIcons";
+import { useI18n } from "@/context/context";
+import { FOOTER_SECTIONS } from "./const/footerSections";
+
+export default function Footer() {
+  const { i18n } = useI18n();
+  return (
+    <footer className="bg-background-alt flex flex-col justify-center mt-16 py-10">
+      <div>
+        <div className="mx-auto px-6 max-w-6xl">
+          <div className="relative grid w-full grid-cols-[repeat(2,160px)] gap-2 sm:gap-6">
+            <div className="absolute z-0 flex w-full h-full aspect-square  ">
+              <img
+                src="/assets/brand/selo-green-dark.png"
+                alt="Movve Logo"
+                sizes="(max-width: 640px) 100vw, 200px"
+                className="object-contain object-center w-full h-full opacity-25"
+              />
+            </div>
+            {FOOTER_SECTIONS.map((section) => (
+              <div key={section.titleKey} className="z-10 ">
+                <h2 className="mb-2 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                  {i18n.t(`footer:${section.titleKey}.title`)}
+                </h2>
+                <ul className="text-gray-600 dark:text-gray-400">
+                  {section.links.map((link) => (
+                    <li key={link.labelKey}>
+                      <a
+                        href={link.href}
+                        className="hover:underline whitespace-nowrap"
+                      >
+                        {i18n.t(`footer:${section.titleKey}.${link.labelKey}`)}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
+        <div className="mx-auto max-w-6xl">
+          <div className="flex relative flex-col items-center gap-2 justify-between max-w-6xl">
+            <a href={"/"} className="relative  max-w-2xs w-full h-10 md:16">
+              <img
+                src={"/assets/brand/brand-gradient.png"}
+                alt="brand Movve Wallet"
+                className="absolute w-full h-full object-contain"
+              />
+            </a>
+            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+              © 2025 Movve Wallet™ . All Rights Reserved.
+            </span>
+            <SocialIcons />
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

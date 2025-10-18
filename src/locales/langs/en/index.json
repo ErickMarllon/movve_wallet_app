@@ -1,0 +1,20 @@
+{
+  "header": {
+    "welcome": "Welcome",
+    "subtitle": "Support Material for Licensee"
+  },
+  "notice": {
+    "title": "ATTENTION",
+    "text": "As a licensed Movve Wallet user, it is your responsibility to ensure brand integrity and **follow all usage guidelines and best practice policies outlined in your contract**. It is essential that you comply with these policies to achieve positive results. Any conduct beyond the company's required standards will not be accepted. **This material is for the exclusive use of authorized Movve Wallet licensees only.**",
+    "obs": "**NOTE: This site is monitored and updated daily.**"
+  },
+  "tutorials": {
+    "title": "Tutorial Videos",
+    "clickHere": "Click here"
+  },
+  "ApnSection": {
+    "presentationTitle": "Movve Wallet Business Plan Presentation",
+    "pdfButton": "View PDF",
+    "pdfDownload": "Download PDF"
+  }
+}

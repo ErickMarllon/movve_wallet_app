@@ -1,0 +1,20 @@
+{
+  "header": {
+    "welcome": "欢迎",
+    "subtitle": "被许可人支持资料"
+  },
+  "notice": {
+    "title": "注意",
+    "text": "作为 Movve Wallet 的授权用户，您有责任维护品牌完整性，并**遵守合同中规定的所有使用指南和最佳实践政策**。遵守这些政策对于确保积极的结果至关重要。任何超出公司要求的行为都将不被接受。**本资料仅供授权的 Movve Wallet 用户使用。**",
+    "obs": "**备注：本网站每日监控并更新。**"
+  },
+  "tutorials": {
+    "title": "教程视频",
+    "clickHere": "点击这里"
+  },
+  "ApnSection": {
+    "presentationTitle": "Movve Wallet 商业计划演示",
+    "pdfButton": "查看 PDF",
+    "pdfDownload": "下载 PDF"
+  }
+}
