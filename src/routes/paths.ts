@@ -5,7 +5,6 @@ function path(root: string, sublink: string) {
 export const PATH_PAGE = {
   home: "/",
   movies: "/movies",
-  moviesTab: "/movies/",
   movieWatch: "/movie/watch/:id",
   file: "/file/:lng",
   notfound: "/notfound",
