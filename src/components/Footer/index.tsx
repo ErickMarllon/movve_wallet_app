@@ -22,7 +22,7 @@ export default function Footer() {
             </div>
             {FOOTER_SECTIONS.map((section) => (
               <div key={section.titleKey} className="z-10 ">
-                <h2 className="mb-2 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                <h2 className="mb-2 text-sm font-semibold uppercase text-gray-200">
                   {i18n.t(`footer:${section.titleKey}.title`)}
                 </h2>
                 <ul className="text-gray-600 dark:text-gray-400">
