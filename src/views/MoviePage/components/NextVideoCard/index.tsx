@@ -1,5 +1,6 @@
 import Play from "@/assets/icons/Play";
 import { type IMovie } from "@/requests/movies";
+import { PATH_PAGE } from "@/routes/paths";
 import { useNavigate } from "react-router-dom";
 
 interface Props extends IMovie {
@@ -10,7 +11,7 @@ export default function NextVideoCard({ disabled, ...props }: Props) {
 
   return (
     <div
-      onClick={() => !disabled && navigate(`/movie/watch/${props?.id}`)}
+      onClick={() => !disabled && navigate(PATH_PAGE.movieWatchId(props?.id))}
       className="relative grid bg-zinc-950 min-w-[360px] grid-cols-[1rf_auto] overflow-hidden p-4 sm:p-6 md:p-8   group/next"
     >
       <div className="relative flex flex-col">

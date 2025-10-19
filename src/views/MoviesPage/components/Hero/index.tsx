@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useI18n } from "@/context/context";
 import Play from "@/assets/icons/Play";
 import { PATH_PAGE } from "@/routes/paths";
+import { Link } from "react-router-dom";
 
 interface Props {
   movies: IMovies[];
@@ -41,8 +42,8 @@ export default function Hero({ movies }: Props) {
             {movie?.description}
           </p>
           <div className="my-4">
-            <a
-              href={PATH_PAGE.movieWatchId(movie?.id)}
+            <Link
+              to={PATH_PAGE.movieWatchId(movie?.id)}
               className="border rounded-[4px] flex gap-3 items-center justify-center bg-gray-300 text-black border-gray-300
              w-[clamp(100px,10vw,140px)] h-[clamp(32px,4vw,44px)]
              text-[clamp(12px,1.5vw,16px)] py-2 px-3 md:py-0 sm:px-2 cursor-pointer
@@ -52,7 +53,7 @@ export default function Hero({ movies }: Props) {
               <span className="font-bold ">
                 {i18n.t(`watch:watch.${i18n.language}`)}
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

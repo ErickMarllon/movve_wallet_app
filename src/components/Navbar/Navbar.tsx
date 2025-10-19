@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import LanguageSelector from "../LanguageSelector";
+import { PATH_PAGE } from "@/routes/paths";
 
 export default function Navbar() {
   // const { i18n } = useI18n();
@@ -7,7 +9,7 @@ export default function Navbar() {
   // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const renderLogo = () => (
-    <a href="/" className="relative w-32 h-8">
+    <Link to={PATH_PAGE.home} className="relative w-32 h-8">
       <span className="sr-only">Movve Wallet</span>
       <img
         src="/logo.png"
@@ -15,7 +17,7 @@ export default function Navbar() {
         className="absolute inset-0 w-full h-full object-contain object-left"
         loading="eager"
       />
-    </a>
+    </Link>
   );
 
   // const renderNavLinks = (isMobile = false) =>

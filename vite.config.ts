@@ -5,13 +5,13 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/",
+  base: "./",
   build: {
     outDir: "dist",
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"), // mapeia @ para a pasta src
+      "@": path.resolve(__dirname, "src"),
       "pdfjs-dist": "pdfjs-dist/legacy/build/pdf",
     },
   },

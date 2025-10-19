@@ -20,6 +20,7 @@ import { toggleFullscreen } from "./utils/toggleFullscreen";
 import Fullscreen from "@/assets/icons/Fullscreen";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import { useNavigate } from "react-router-dom";
+import { PATH_PAGE } from "@/routes/paths";
 
 interface Props {
   movie?: Partial<IMovie>;
@@ -144,7 +145,7 @@ export default function CustomPlayer({ movie }: Props) {
       {isLoading && <LoadingSpinner />}
 
       <MdArrowBack
-        onClick={() => navigate(`/movies`)}
+        onClick={() => navigate(PATH_PAGE.movies)}
         className="z-70 text-foreground rounded-full top-6 left-6 absolute opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-250 cursor-pointer"
         size={40}
       />

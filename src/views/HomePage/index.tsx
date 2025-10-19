@@ -4,6 +4,7 @@ import { BsDownload } from "react-icons/bs";
 import { downloadPdf } from "@/utils/downloadPdf";
 import { PDFViewer } from "@/components/PDFViewer";
 import { PATH_PAGE } from "@/routes/paths";
+import { Link } from "react-router-dom";
 
 function Home() {
   const { i18n } = useI18n();
@@ -51,13 +52,14 @@ function Home() {
                 {i18n.t("tutorials.title")}
               </h1>
 
-              <a
-                href={`/movies`}
+              <Link
+                to={PATH_PAGE.movies}
+                target="_top"
                 rel="noopener noreferrer"
                 className="py-2 max-w-[400px] tracking-wider text-center border-2 border-green rounded-md font-bold bg-green hover:bg-greendark hover:border-greendark hover:text-white transition duration-200"
               >
                 {i18n.t("tutorials.clickHere")}
-              </a>
+              </Link>
             </div>
 
             <div className="px-6 py-4 tracking-wider flex flex-col text-left gap-4">
@@ -65,14 +67,14 @@ function Home() {
                 {i18n.t("ApnSection.presentationTitle")}
               </h1>
 
-              <a
-                href={PATH_PAGE.fileLng(i18n.language)}
+              <Link
+                to={PATH_PAGE.fileLng(i18n.language)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-2 max-w-[400px] tracking-wider text-center border-2 border-green rounded-md font-bold bg-green hover:bg-greendark hover:border-greendark hover:text-white transition duration-200"
               >
                 {i18n.t("ApnSection.pdfButton")}
-              </a>
+              </Link>
 
               <button
                 onClick={() => downloadPdf(pdfFile)}

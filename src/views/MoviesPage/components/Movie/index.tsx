@@ -1,4 +1,6 @@
 import { type IMovie } from "@/requests/movies";
+import { PATH_PAGE } from "@/routes/paths";
+import { Link } from "react-router-dom";
 
 interface Props {
   movie: IMovie;
@@ -7,10 +9,10 @@ export default function Movie({ movie }: Props) {
   if (!movie?.id) return null;
 
   return (
-    <a
+    <Link
       className="min-w-[160px] w-full max-w-[280px]
       inline-block cursor-pointer relative p-2 aspect-[16/9]"
-      href={`/movie/watch/${movie.id}`}
+      to={PATH_PAGE.movieWatchId(movie.id)}
     >
       <img
         src={movie.thumbnail}
@@ -30,6 +32,6 @@ export default function Movie({ movie }: Props) {
           {movie?.title?.toLowerCase()}
         </p>
       </div>
-    </a>
+    </Link>
   );
 }

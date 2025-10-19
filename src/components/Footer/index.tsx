@@ -1,6 +1,7 @@
 import SocialIcons from "./SocialIcons";
 import { useI18n } from "@/context/context";
 import { FOOTER_SECTIONS } from "./const/footerSections";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const { i18n } = useI18n();
@@ -25,12 +26,12 @@ export default function Footer() {
                 <ul className="text-gray-600 dark:text-gray-400">
                   {section.links.map((link) => (
                     <li key={link.labelKey}>
-                      <a
-                        href={link.href}
+                      <Link
+                        to={link.href}
                         className="hover:underline whitespace-nowrap"
                       >
                         {i18n.t(`footer:${section.titleKey}.${link.labelKey}`)}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -43,13 +44,13 @@ export default function Footer() {
 
         <div className="mx-auto max-w-6xl">
           <div className="flex relative flex-col items-center gap-2 justify-between max-w-6xl">
-            <a href={"/"} className="relative  max-w-2xs w-full h-10 md:16">
+            <Link to={"/"} className="relative  max-w-2xs w-full h-10 md:16">
               <img
                 src={"/assets/brand/brand-gradient.png"}
                 alt="brand Movve Wallet"
                 className="absolute w-full h-full object-contain"
               />
-            </a>
+            </Link>
             <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
               © 2025 Movve Wallet™ . All Rights Reserved.
             </span>
