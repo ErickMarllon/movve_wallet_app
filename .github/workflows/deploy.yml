@@ -23,7 +23,7 @@ jobs:
           yarn install
           yarn build
 
-      - name: Deploy via FTP
+      - name: Deploy build
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.HOSTINGER_HOST }}
@@ -33,3 +33,22 @@ jobs:
           protocol: ${{ secrets.HOSTINGER_PROTOCOL }}
           local-dir: ./dist/
           server-dir: /domains/movvewallet.pro/public_html/
+          exclude: assets/**,pdf/**,thumbnails/**,videos/**
+
+      - name: Deploy public folders if changed
+        run: |
+          git fetch origin main
+          for folder in assets pdf thumbnails videos; do
+            if ! git diff --quiet origin/main -- public/$folder; then
+              echo "Deploying $folder..."
+              npx ftp-deploy --server ${{ secrets.HOSTINGER_HOST }} \
+                --username ${{ secrets.HOSTINGER_USER }} \
+                --password ${{ secrets.HOSTINGER_PASSWORD }} \
+                --port ${{ secrets.HOSTINGER_SSH_PORT }} \
+                --protocol ${{ secrets.HOSTINGER_PROTOCOL }} \
+                --local-dir ./dist/$folder/ \
+                --server-dir /domains/movvewallet.pro/public_html/$folder/
+            else
+              echo "$folder unchanged, skipping..."
+            fi
+          done
