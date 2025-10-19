@@ -24,6 +24,7 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
   const [pageRendering, setPageRendering] = useState<boolean>(false);
   const [pdfjsLoaded, setPdfjsLoaded] = useState<boolean>(false);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   async function loadPdfFromUrl(url: string) {
     try {
@@ -103,12 +104,13 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
   };
 
   useEffect(() => {
+    if (isPaused) return;
     const interval = setInterval(() => {
       nextSlide();
     }, 5000);
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [images.length]);
+  }, [isPaused, images.length]);
 
   return (
     <div
@@ -123,33 +125,38 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
             <span className="ml-2">Carregando visualizador de PDF...</span>
           </div>
         )}
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute w-full h-full inset-0 transition-opacity duration-700 ease-in-out ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
-            data-carousel-item
-          >
-            <img
-              src={image}
-              alt={`PDF page ${index + 1}`}
-              className="absolute top-1/2 left-1/2 w-full h-full object-contain -translate-x-1/2 -translate-y-1/2"
-            />
-          </div>
-        ))}
+        <div
+          className={`relative flex transition-transform duration-700 ease-in-out`}
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {images.map((image, index) => (
+            <div key={index} className="flex-shrink-0 w-full h-full">
+              <img
+                src={image}
+                alt={`PDF page ${index + 1}`}
+                className="w-full h-full object-contain"
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       {images.length > 1 && (
-        <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <div
+          className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           {images.map((_, index) => (
             <button
               key={index}
               type="button"
               className={`w-3 h-3 rounded-full cursor-pointer ${
                 index === currentSlide
-                  ? "bg-white"
-                  : "bg-white/50 hover:bg-white/80"
+                  ? "bg-gray-600"
+                  : "bg-gray-600/50 hover:bg-gray-600/80"
               }`}
               aria-current={index === currentSlide}
               aria-label={`Slide ${index + 1}`}
@@ -165,6 +172,8 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
             type="button"
             className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
             onClick={prevSlide}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
             <span className=" inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
               <svg
@@ -189,6 +198,8 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
             type="button"
             className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
             onClick={nextSlide}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
             <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
               <svg

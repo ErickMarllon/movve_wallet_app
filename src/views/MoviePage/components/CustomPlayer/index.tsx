@@ -75,14 +75,12 @@ export default function CustomPlayer({ movie }: Props) {
     const handlePause = () => setIsPlaying(false);
     const handleLoadStart = () => setIsLoading(true);
     const handleCanPlay = () => setIsLoading(false);
-    // const handleWaiting = () => setIsLoading(true);
     const handlePlaying = () => setIsLoading(false);
 
     video.addEventListener("play", handlePlay);
     video.addEventListener("pause", handlePause);
     video.addEventListener("loadstart", handleLoadStart);
     video.addEventListener("canplay", handleCanPlay);
-    // video.addEventListener("waiting", handleWaiting);
     video.addEventListener("playing", handlePlaying);
 
     return () => {
@@ -90,7 +88,6 @@ export default function CustomPlayer({ movie }: Props) {
       video.removeEventListener("pause", handlePause);
       video.removeEventListener("loadstart", handleLoadStart);
       video.removeEventListener("canplay", handleCanPlay);
-      // video.removeEventListener("waiting", handleWaiting);
       video.removeEventListener("playing", handlePlaying);
     };
   }, []);
@@ -174,8 +171,6 @@ export default function CustomPlayer({ movie }: Props) {
         className="w-full z-50 h-full absolute cursor-pointer"
         onClick={handleVideoClick}
         onTouchStart={handleVideoTouch}
-        // onLoadedData={() => setIsLoading(false)}
-        // onWaiting={() => setIsLoading(true)}
         onError={() => navigate("/not-found")}
       >
         <source src={movie?.url} type={movie?.mimeType} />
