@@ -1,6 +1,5 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import LayoutWrapper from "./components/layout/LayoutWrapper";
 import { I18nProvider } from "./context/provider";
 import { PATH_PAGE } from "./routes/paths";

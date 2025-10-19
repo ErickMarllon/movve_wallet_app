@@ -2,6 +2,8 @@ import SocialIcons from "./SocialIcons";
 import { useI18n } from "@/context/context";
 import { FOOTER_SECTIONS } from "./const/footerSections";
 import { Link } from "react-router-dom";
+import { scrollToTopSmooth } from "@/utils/scrollToTopSmooth";
+import { PATH_PAGE } from "@/routes/paths";
 
 export default function Footer() {
   const { i18n } = useI18n();
@@ -29,6 +31,7 @@ export default function Footer() {
                       <Link
                         to={link.href}
                         className="hover:underline whitespace-nowrap"
+                        onClick={() => link.href === "#" && scrollToTopSmooth()}
                       >
                         {i18n.t(`footer:${section.titleKey}.${link.labelKey}`)}
                       </Link>
@@ -44,7 +47,11 @@ export default function Footer() {
 
         <div className="mx-auto max-w-6xl">
           <div className="flex relative flex-col items-center gap-2 justify-between max-w-6xl">
-            <Link to={"/"} className="relative  max-w-2xs w-full h-10 md:16">
+            <Link
+              to={PATH_PAGE.home}
+              className="relative  max-w-2xs w-full h-10 md:16"
+              onClick={() => scrollToTopSmooth()}
+            >
               <img
                 src={"/assets/brand/brand-gradient.png"}
                 alt="brand Movve Wallet"
