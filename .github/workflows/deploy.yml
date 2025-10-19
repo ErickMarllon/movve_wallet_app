@@ -3,7 +3,7 @@ name: Deploy Build via FTP
 on:
   push:
     branches:
-      - deploy-teste
+      - main
 
 jobs:
   ftp-deploy:
