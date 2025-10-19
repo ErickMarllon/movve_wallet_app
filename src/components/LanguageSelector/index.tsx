@@ -1,5 +1,5 @@
 import { useI18n } from "@/context/context";
-import { allLangs } from "../../locales/config-lang";
+import { allLangs } from "@/locales/config-lang";
 import { useEffect, useRef, useState } from "react";
 
 interface Props {

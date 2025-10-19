@@ -4,6 +4,7 @@ export const toggleFullscreen = (
   if (!videoRef.current) return;
 
   const video = videoRef.current;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const doc: any = document;
 
   if (doc.fullscreenElement || doc.webkitFullscreenElement) {
@@ -17,11 +18,17 @@ export const toggleFullscreen = (
 
   if (video.requestFullscreen) {
     video.requestFullscreen();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } else if ((video as any).webkitRequestFullscreen) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (video as any).webkitRequestFullscreen();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } else if ((video as any).msRequestFullscreen) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (video as any).msRequestFullscreen();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } else if ((video as any).webkitEnterFullscreen) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (video as any).webkitEnterFullscreen();
   }
 };

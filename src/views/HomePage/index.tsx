@@ -10,7 +10,7 @@ function Home() {
   const { i18n } = useI18n();
   const pdfFile = i18n.language
     ? `/pdf/APN_MOVVE_${i18n.language?.toUpperCase()}.pdf`
-    : "";
+    : `/pdf/APN_MOVVE_EN.pdf`;
 
   return (
     <div className="flex flex-col pt-22 gap-10 justify-center">
