@@ -1,4 +1,4 @@
-import { type IMovie, request } from "@/requests/movies";
+import { type IMovie, request } from "@/mock_videos";
 
 export function filterMovieById(id?: string): IMovie | null {
   if (!id) return null;

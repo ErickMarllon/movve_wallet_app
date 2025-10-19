@@ -1,5 +1,5 @@
 import { useIsMobile } from "@/hooks/useIsMobile";
-import { type IMovie } from "@/requests/movies";
+import { type IMovie } from "@/mock_videos";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { useVideoPlayer } from "./utils/useVideoPlayer";

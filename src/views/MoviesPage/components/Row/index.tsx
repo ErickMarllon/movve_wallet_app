@@ -1,5 +1,5 @@
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import { type IMovie } from "@/requests/movies";
+import { type IMovie } from "@/mock_videos";
 import Movie from "../Movie";
 
 interface Props {

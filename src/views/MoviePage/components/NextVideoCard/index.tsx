@@ -1,5 +1,5 @@
 import Play from "@/assets/icons/Play";
-import { type IMovie } from "@/requests/movies";
+import { type IMovie } from "@/mock_videos";
 import { PATH_PAGE } from "@/routes/paths";
 import { useNavigate } from "react-router-dom";
 

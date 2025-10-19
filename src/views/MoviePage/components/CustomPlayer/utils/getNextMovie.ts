@@ -1,4 +1,4 @@
-import { request } from "@/requests/movies";
+import { request } from "@/mock_videos";
 
 export function getNextMovie(id?: string) {
   for (const group of request) {

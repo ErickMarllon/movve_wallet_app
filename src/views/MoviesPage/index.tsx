@@ -1,4 +1,4 @@
-import { request } from "@/requests/movies";
+import { request } from "@/mock_videos";
 import { Suspense } from "react";
 import { useI18n } from "@/context/context";
 import LoadingSpinner from "@/components/LoadingSpinner";

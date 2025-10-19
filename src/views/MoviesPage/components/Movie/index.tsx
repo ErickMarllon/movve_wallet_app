@@ -1,4 +1,4 @@
-import { type IMovie } from "@/requests/movies";
+import { type IMovie } from "@/mock_videos";
 import { PATH_PAGE } from "@/routes/paths";
 import { Link } from "react-router-dom";
 

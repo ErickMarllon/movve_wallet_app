@@ -1,10 +1,11 @@
+import { PATH_PAGE } from "@/routes/paths";
 import { useMemo } from "react";
 import { useLocation } from "react-router-dom";
 
 type Pattern = string;
 export const ACTIVE_COMPONENTS = {
-  navbar: ["/", "/movies"],
-  footer: ["/", "/movies"],
+  navbar: [PATH_PAGE.home, PATH_PAGE.movies],
+  footer: [PATH_PAGE.home, PATH_PAGE.movies],
 };
 
 export default function useShowOnlyOnRoutes(patterns: Pattern[] = []) {

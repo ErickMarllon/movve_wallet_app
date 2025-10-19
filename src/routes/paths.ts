@@ -11,4 +11,5 @@ export const PATH_PAGE = {
 
   fileLng: (lng: string) => path(`/file`, `/${lng}`),
   movieWatchId: (id?: string) => path(`/movie/watch`, `/${id}`),
+  videoMp4: (id?: string) => path(`/videos`, `/${id}.mp4`),
 };

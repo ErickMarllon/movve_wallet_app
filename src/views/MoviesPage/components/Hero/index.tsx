@@ -1,4 +1,4 @@
-import { type IMovie, type IMovies, request } from "@/requests/movies";
+import { type IMovie, type IMovies, request } from "@/mock_videos";
 import { useEffect, useState } from "react";
 import { useI18n } from "@/context/context";
 import Play from "@/assets/icons/Play";
