@@ -32,8 +32,28 @@ export const allLangs: IAllLangs[] = [
   },
   {
     label: "Portuguese",
+    value: "pt",
+    icon: "assets/lang/PT.svg",
+  },
+  {
+    label: "Portuguese",
     value: "pt-BR",
     icon: "assets/lang/BR.svg",
+  },
+  {
+    label: "Russian",
+    value: "ru",
+    icon: "assets/lang/RU.svg",
+  },
+  {
+    label: "Italian",
+    value: "it",
+    icon: "assets/lang/IT.svg",
+  },
+  {
+    label: "Vietnamese",
+    value: "vi",
+    icon: "assets/lang/VN.svg",
   },
 ];
 

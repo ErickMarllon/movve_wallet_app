@@ -1,0 +1,18 @@
+{
+  "resources": {
+    "title": "Tài nguyên",
+    "flowbite": "Flowbite",
+    "tailwind": "Tailwind CSS"
+  },
+  "followUs": {
+    "title": "Theo dõi chúng tôi",
+    "github": "Github",
+    "discord": "Discord"
+  },
+  "legal": {
+    "title": "Pháp lý",
+    "privacyPolicy": "Chính sách bảo mật",
+    "termsConditions": "Điều khoản & Điều kiện"
+  },
+  "copyright": "© 2025 Movve Wallet™. Đã đăng ký bản quyền."
+}

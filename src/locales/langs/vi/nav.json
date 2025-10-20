@@ -1,0 +1,20 @@
+{
+  "header": {
+    "welcome": "Chào mừng",
+    "subtitle": "Tài liệu Hỗ trợ cho Người được cấp phép"
+  },
+  "notice": {
+    "title": "CHÚ Ý",
+    "text": "Là người dùng được cấp phép Movve Wallet, bạn có trách nhiệm đảm bảo sự toàn vẹn của thương hiệu và **tuân thủ tất cả các hướng dẫn sử dụng và chính sách thực hành tốt nhất được nêu trong hợp đồng của bạn**. Việc tuân thủ các chính sách này là rất quan trọng để đạt được kết quả tích cực. Bất kỳ hành vi nào vượt quá tiêu chuẩn yêu cầu của công ty sẽ không được chấp nhận. **Tài liệu này chỉ dành riêng cho những người được cấp phép Movve Wallet được ủy quyền.**",
+    "obs": "**LƯU Ý: Trang web này được giám sát và cập nhật hàng ngày.**"
+  },
+  "tutorials": {
+    "title": "Video Hướng dẫn",
+    "clickHere": "Nhấn vào đây"
+  },
+  "ApnSection": {
+    "presentationTitle": "Bài thuyết trình Kế hoạch Kinh doanh Movve Wallet",
+    "pdfButton": "Xem PDF",
+    "pdfDownload": "Tải PDF"
+  }
+}

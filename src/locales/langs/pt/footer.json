@@ -1,0 +1,18 @@
+{
+  "resources": {
+    "title": "Recursos",
+    "flowbite": "Flowbite",
+    "tailwind": "Tailwind CSS"
+  },
+  "followUs": {
+    "title": "Segue-nos",
+    "github": "Github",
+    "discord": "Discord"
+  },
+  "legal": {
+    "title": "Legal",
+    "privacyPolicy": "Política de Privacidade",
+    "termsConditions": "Termos e Condições"
+  },
+  "copyright": "© 2025 Movve Wallet™. Todos os direitos reservados."
+}

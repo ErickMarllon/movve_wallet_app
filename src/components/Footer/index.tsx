@@ -59,7 +59,7 @@ export default function Footer() {
               />
             </Link>
             <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-              © 2025 Movve Wallet™ . All Rights Reserved.
+              {i18n.t(`footer:copyright`)}
             </span>
             <SocialIcons />
           </div>

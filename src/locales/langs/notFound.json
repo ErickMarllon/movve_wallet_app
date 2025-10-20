@@ -5,7 +5,11 @@
     "ko": "길을 잃으셨나요?",
     "zh": "迷路了吗？",
     "es": "¿Perdido?",
-    "pt-BR": "Você se perdeu?"
+    "pt-BR": "Você se perdeu?",
+    "it": "Perso?",
+    "pt-PT": "Perdeu-se?",
+    "ru": "Потерялись?",
+    "vi": "Lạc đường?"
   },
   "description": {
     "en": "Unfortunately, we couldn't find this page.",
@@ -13,7 +17,11 @@
     "ko": "죄송하지만, 해당 페이지를 찾을 수 없습니다.",
     "zh": "很遗憾，我们找不到此页面。",
     "es": "Lamentablemente, no pudimos encontrar esta página.",
-    "pt-BR": "Infelizmente, não localizamos essa página."
+    "pt-BR": "Infelizmente, não localizamos essa página.",
+    "it": "Purtroppo, non siamo riusciti a trovare questa pagina.",
+    "pt-PT": "Infelizmente, não conseguimos encontrar esta página.",
+    "ru": "К сожалению, мы не смогли найти эту страницу.",
+    "vi": "Rất tiếc, chúng tôi không thể tìm thấy trang này."
   },
   "homeLink": {
     "en": "Go to Movve Wallet Home",
@@ -21,6 +29,10 @@
     "ko": "Movve Wallet 홈으로 이동",
     "zh": "前往 Movve Wallet 首页",
     "es": "Ir a la página principal de Movve Wallet",
-    "pt-BR": "Página inicial da Movve Wallet"
+    "pt-BR": "Página inicial da Movve Wallet",
+    "it": "Vai alla Home di Movve Wallet",
+    "pt-PT": "Ir para a página inicial da Movve Wallet",
+    "ru": "Перейти на главную Movve Wallet",
+    "vi": "Đi tới trang chủ Movve Wallet"
   }
 }
