@@ -1,3 +1,4 @@
+import { useI18n } from "@/context/context";
 import { useEffect, useState } from "react";
 
 declare global {
@@ -25,6 +26,7 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
   const [pdfjsLoaded, setPdfjsLoaded] = useState<boolean>(false);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [isPaused, setIsPaused] = useState(false);
+  const { i18n } = useI18n();
 
   async function loadPdfFromUrl(url: string) {
     try {
@@ -122,7 +124,7 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
         {(pageRendering || pdfRendering || !pdfjsLoaded) && (
           <div className="flex h-full w-full justify-center items-center py-8">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
-            <span className="ml-2">Carregando visualizador de PDF...</span>
+            <span className="ml-2">{i18n.t(`loading:${i18n.language}`)}</span>
           </div>
         )}
         <div
