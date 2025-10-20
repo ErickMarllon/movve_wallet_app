@@ -1,4 +1,4 @@
-import i18n from "i18next";
+import i18n, { type InitOptions } from "i18next";
 import { initReactI18next } from "react-i18next";
 import I18nextBrowserLanguageDetector from "i18next-browser-languagedetector";
 
@@ -42,25 +42,94 @@ import viFooter from "../locales/langs/vi/footer.json";
 
 import notFound from "../locales/langs/notFound.json";
 import watch from "../locales/langs/watch.json";
+import loading from "../locales/langs/loading.json";
+import { CookiesService } from "@/service/cookies";
 
-const resources = {
-  en: { index: enIndex, nav: enNav, footer: enFooter, notFound, watch },
-  es: { index: esIndex, nav: esNav, footer: esFooter, notFound, watch },
-  ja: { index: jaIndex, nav: jaNav, footer: jaFooter, notFound, watch },
-  ko: { index: koIndex, nav: koNav, footer: koFooter, notFound, watch },
+const resources: InitOptions["resources"] = {
+  en: {
+    index: enIndex,
+    nav: enNav,
+    footer: enFooter,
+    notFound,
+    watch,
+    loading,
+  },
+  es: {
+    index: esIndex,
+    nav: esNav,
+    footer: esFooter,
+    notFound,
+    watch,
+    loading,
+  },
+  ja: {
+    index: jaIndex,
+    nav: jaNav,
+    footer: jaFooter,
+    notFound,
+    watch,
+    loading,
+  },
+  ko: {
+    index: koIndex,
+    nav: koNav,
+    footer: koFooter,
+    notFound,
+    watch,
+    loading,
+  },
   "pt-BR": {
     index: ptBrIndex,
     nav: ptBrNav,
     footer: ptBrFooter,
     notFound,
     watch,
+    loading,
   },
-  zh: { index: zhIndex, nav: zhNav, footer: zhFooter, notFound, watch },
-  it: { index: itIndex, nav: itNav, footer: itFooter, notFound, watch },
-  pt: { index: ptIndex, nav: ptNav, footer: ptFooter, notFound, watch },
-  ru: { index: ruIndex, nav: ruNav, footer: ruFooter, notFound, watch },
-  vi: { index: viIndex, nav: viNav, footer: viFooter, notFound, watch },
+  zh: {
+    index: zhIndex,
+    nav: zhNav,
+    footer: zhFooter,
+    notFound,
+    watch,
+    loading,
+  },
+  it: {
+    index: itIndex,
+    nav: itNav,
+    footer: itFooter,
+    notFound,
+    watch,
+    loading,
+  },
+  pt: {
+    index: ptIndex,
+    nav: ptNav,
+    footer: ptFooter,
+    notFound,
+    watch,
+    loading,
+  },
+  ru: {
+    index: ruIndex,
+    nav: ruNav,
+    footer: ruFooter,
+    notFound,
+    watch,
+    loading,
+  },
+  vi: {
+    index: viIndex,
+    nav: viNav,
+    footer: viFooter,
+    notFound,
+    watch,
+    loading,
+  },
 };
+
+const savedLanguage = CookiesService.getItem("i18next") as string | undefined;
+const initialLng = savedLanguage || defaultLang.value;
 
 if (!i18n.isInitialized) {
   i18n
@@ -69,9 +138,9 @@ if (!i18n.isInitialized) {
     .init({
       resources,
       debug: false,
-      lng: defaultLang.value,
+      lng: initialLng,
       fallbackLng: defaultLang.value,
-      ns: ["index", "nav", "footer"],
+      ns: ["index", "nav", "footer", "watch", "loading", "notFound"],
       defaultNS: "index",
       interpolation: { escapeValue: false },
       react: { useSuspense: false },

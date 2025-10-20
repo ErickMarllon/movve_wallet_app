@@ -20,9 +20,9 @@ export const I18nProvider = ({ children }: ProviderProps) => {
 
     if (typeof document !== "undefined") {
       document.documentElement.lang = languageToSet.value;
+      CookiesService.setItem("i18next", languageToSet.value);
+      i18n.changeLanguage(languageToSet.value);
     }
-
-    i18n.changeLanguage(languageToSet.value);
   }, []);
 
   useEffect(() => {
@@ -33,6 +33,7 @@ export const I18nProvider = ({ children }: ProviderProps) => {
       )?.value;
 
       const preferredLanguage = savedLanguage ?? browserLanguage;
+
       changeLang(preferredLanguage ?? defaultLang.value);
     };
 

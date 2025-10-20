@@ -51,7 +51,7 @@ export default function Hero({ movies }: Props) {
             >
               <Play size={26} />
               <span className="font-bold ">
-                {i18n.t(`watch:watch.${i18n.language}`)}
+                {i18n.t(`watch:${i18n.language}`)}
               </span>
             </Link>
           </div>
