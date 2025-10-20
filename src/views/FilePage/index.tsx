@@ -100,7 +100,7 @@ export default function FilePage() {
   return (
     <div className="w-full h-full absolute top-0 left-0 bg-black">
       <Suspense fallback={<LoadingSpinner />}>
-        {(pdfRendering || pageRendering) && <LoadingSpinner />}
+        {(pdfRendering || pageRendering) && isMobile && <LoadingSpinner />}
         {!isMobile && (
           <embed
             src={pdfUrl}
