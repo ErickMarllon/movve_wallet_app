@@ -1,0 +1,59 @@
+{
+  "header": {
+    "welcome": "Benvenuto",
+    "subtitle": "Materiale di supporto per il licenziatario"
+  },
+  "notice": {
+    "title": "ATTENZIONE",
+    "text": "In qualità di <strong>Licenziatario Movve Wallet</strong>, è sua responsabilità salvaguardare l'integrità del marchio e seguire tutte le linee guida e le politiche di best practice descritte nel contratto. È essenziale rispettare queste politiche per garantire risultati positivi. Non sarà accettato alcun comportamento che vada oltre gli standard richiesti dall'azienda. Questo materiale è ad uso esclusivo dei Licenziatari Autorizzati Movve Wallet.",
+    "obs": "<strong>NOTA: Questo sito è monitorato e aggiornato quotidianamente.<strong>"
+  },
+  "tutorials": {
+    "title": "Video Tutorial",
+    "clickHere": "Clicca qui"
+  },
+  "ApnSection": {
+    "presentationTitle": "Presentazione del Business Plan di Movve Wallet",
+    "pdfButton": "Visualizza PDF",
+    "pdfDownload": "Scarica PDF",
+    "businessPlan": "Presentazione Piano di Business Movve Wallet"
+  },
+  "hero": {
+    "welcome": "Tutto ciò di cui ha bisogno un <strong>membro Movve</strong> —<br/>in un unico posto.",
+    "subtitle": "Monitora le tue prestazioni, accedi a benefit esclusivi ed evolve la tua strategia con formazione e strumenti pratici.",
+    "badge": "Nuova Area Membri",
+    "cta": "Inizia da qui"
+  },
+  "onboarding": {
+    "steps": {
+      "createAccount": {
+        "title": "Crea account e verifica identità",
+        "desc1": "Crea il tuo profilo e conferma email/telefono.",
+        "desc2": "Invia documento e selfie per la verifica.",
+        "desc3": "Attendi l'approvazione KYC (sarai notificato)."
+      },
+      "protectAccount": {
+        "title": "Proteggi il tuo account",
+        "desc1": "Attiva 2FA (Google Authenticator iOS).",
+        "desc2": "Imposta PIN transazionale e rivedi sessioni attive.",
+        "desc3": "Salva le tue parole chiave/backup in un luogo sicuro."
+      },
+      "connectWallet": {
+        "title": "Connetti Wallet e aggiungi saldo",
+        "desc1": "Genera/copia il tuo indirizzo USDT (TRC20) in Movve.",
+        "desc2": "Trasferisci dal tuo wallet o exchange a questo indirizzo.",
+        "desc3": "Monitora lo stato on-chain e il credito nella tua area."
+      },
+      "activateProducts": {
+        "title": "Attiva prodotti e monitora",
+        "desc1": "Movve Wallet: organizza asset, attiva staking quando disponibile.",
+        "desc2": "Movve A.I: abilita strategie automatizzate in base al tuo profilo.",
+        "desc3": "Movve Pay: genera carta virtuale e usa QR per pagamenti."
+      }
+    }
+  },
+  "listMovie": {
+    "seeMore": "Vedi altro",
+    "tutorialVideos": "Video Tutorial MOVVE"
+  }
+}

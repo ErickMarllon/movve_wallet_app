@@ -1,5 +1,5 @@
+import type { IAllLangs } from "@/i18n/config-lang";
 import type { i18n } from "i18next";
-import type { IAllLangs } from "@/locales/config-lang";
 
 export interface ProviderProps {
   children: React.ReactNode;

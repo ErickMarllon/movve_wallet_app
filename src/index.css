@@ -1,22 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 @import "tailwindcss";
 
 :root {
   --background-alt: #111111;
-  --background: #0a0a0a;
+  --background: #001000;
   --foreground: #ededed;
-  --green: #38cd02;
+  --green: #00c213;
   --greendark: #217b00;
+  --accent-green: #00620a;
+  --badge-text: #b1ffb9;
+
+  --font-inter: "Inter";
+  --font-poppins: "Poppins";
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-background-alt: var(--background-alt);
   --color-foreground: var(--foreground);
   --color-green: var(--green);
   --color-greendark: var(--greendark);
+  --color-accent-green: var(--accent-green);
+  --color-accent-green: var(--accent-green);
+  --color-badge-text: var(--badge-text);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter);
+  --font-poppins: var(--font-poppins);
+
   --breakpoint-xs: 20rem;
+
+  --container-padding: 1rem;
+  --container-padding-sm: 2rem;
+  --container-padding-lg: 4rem;
+  --container-padding-xl: 5rem;
+  --container-padding-2xl: 6rem;
 }
 
 html {
@@ -26,7 +46,8 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: lato, Helvetica, sans-serif;
+  font-family: "Poppins", "Inter", lato, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 #viewer {
@@ -36,7 +57,22 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+@layer components {
+  .container-grid {
+    @apply grid grid-cols-12 md:grid-cols-12 w-full max-w-screen h-auto justify-center items-center;
+  }
+  .contant-grid {
+    @apply col-span-10 col-start-2 col-end-12;
+  }
+  .shadow-green {
+    @apply before:rounded-full before:absolute before:bg-[#00C213]/48 
+            before:blur-[100px] before:z-0 before:content-['']
+            before:saturate-150 before:brightness-105;
+  }
 }

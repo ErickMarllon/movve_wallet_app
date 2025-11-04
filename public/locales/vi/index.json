@@ -1,0 +1,59 @@
+{
+  "header": {
+    "welcome": "Chào mừng",
+    "subtitle": "Tài liệu Hỗ trợ cho Người được cấp phép"
+  },
+  "notice": {
+    "title": "CHÚ Ý",
+    "text": "Là <strong>Bên được cấp phép Movve Wallet</strong>, bạn có trách nhiệm duy trì tính toàn vẹn của thương hiệu và tuân theo tất cả các hướng dẫn và chính sách thực hành tốt nhất được mô tả trong hợp đồng của bạn. Điều cần thiết là bạn phải tôn trọng các chính sách này để đảm bảo kết quả tích cực. Sẽ không có hành vi nào vượt quá các tiêu chuẩn mà công ty yêu cầu được chấp nhận. Tài liệu này dành riêng cho các Bên được cấp phép Movve Wallet được ủy quyền.",
+    "obs": "<strong>LƯU Ý: Trang web này được giám sát và cập nhật hàng ngày.<strong>"
+  },
+  "tutorials": {
+    "title": "Video Hướng dẫn",
+    "clickHere": "Nhấn vào đây"
+  },
+  "ApnSection": {
+    "presentationTitle": "Bài thuyết trình Kế hoạch Kinh doanh Movve Wallet",
+    "pdfButton": "Xem PDF",
+    "pdfDownload": "Tải PDF",
+    "businessPlan": "Trình bày Kế hoạch Kinh doanh Movve Wallet"
+  },
+  "hero": {
+    "welcome": "Mọi thứ mà một <strong>thành viên Movve</strong> cần —<br/>tại một nơi.",
+    "subtitle": "Theo dõi hiệu suất của bạn, truy cập các lợi ích độc quyền và phát triển chiến lược của bạn với giáo dục và công cụ thực tiễn.",
+    "badge": "Khu Vực Thành Viên Mới",
+    "cta": "Bắt đầu từ đây"
+  },
+  "onboarding": {
+    "steps": {
+      "createAccount": {
+        "title": "Tạo tài khoản & xác minh danh tính",
+        "desc1": "Tạo hồ sơ của bạn và xác nhận email/điện thoại.",
+        "desc2": "Gửi tài liệu và ảnh selfie để xác minh.",
+        "desc3": "Chờ phê duyệt KYC (bạn sẽ được thông báo)."
+      },
+      "protectAccount": {
+        "title": "Bảo vệ tài khoản của bạn",
+        "desc1": "Bật 2FA (Google Authenticator iOS).",
+        "desc2": "Đặt mã PIN giao dịch và xem lại các phiên hoạt động.",
+        "desc3": "Lưu cụm từ khôi phục/backup ở vị trí an toàn."
+      },
+      "connectWallet": {
+        "title": "Kết nối Ví & thêm số dư",
+        "desc1": "Tạo/sao chép địa chỉ USDT (TRC20) của bạn trong Movve.",
+        "desc2": "Chuyển từ ví hoặc sàn giao dịch của bạn đến địa chỉ này.",
+        "desc3": "Theo dõi trạng thái on-chain và tín dụng trong khu vực của bạn."
+      },
+      "activateProducts": {
+        "title": "Kích hoạt sản phẩm & theo dõi",
+        "desc1": "Movve Wallet: sắp xếp tài sản, kích hoạt staking khi có sẵn.",
+        "desc2": "Movve A.I: kích hoạt chiến lược tự động theo hồ sơ của bạn.",
+        "desc3": "Movve Pay: tạo thẻ ảo và sử dụng QR để thanh toán."
+      }
+    }
+  },
+  "listMovie": {
+    "seeMore": "Xem thêm",
+    "tutorialVideos": "Video Hướng Dẫn MOVVE"
+  }
+}

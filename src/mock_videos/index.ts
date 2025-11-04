@@ -245,7 +245,7 @@ export const request: IMovies[] = [
   },
   {
     language: "中文",
-    code: "zh",
+    code: "cn",
     movies: [
       {
         id: "187zJNyucn01Km14QYeQ70rCZoHBHUj_K",

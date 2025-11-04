@@ -2,8 +2,8 @@ import { request } from "@/mock_videos";
 import { Suspense } from "react";
 import { useI18n } from "@/context/context";
 import LoadingSpinner from "@/components/LoadingSpinner";
-import Row from "./components/Row";
 import Hero from "./components/Hero";
+import Row from "@/components/Row";
 
 export default function MoviesPage() {
   const { lang } = useI18n();
@@ -17,7 +17,7 @@ export default function MoviesPage() {
   return (
     <Suspense fallback={<LoadingSpinner />}>
       <Hero movies={sortedRequest} />
-      <div className="relative flex flex-col overflow-hidden w-full -mt-10 sm:-mt-16 md:-mt-14  z-40">
+      <div className="relative flex flex-col overflow-hidden w-full -mt-10 sm:-mt-16 md:-mt-14 z-40 pl-4 md:pl-8 gap-6">
         {sortedRequest.map((category, index) => (
           <Row
             key={`${index} - ${category.language}`}

@@ -1,0 +1,59 @@
+{
+  "header": {
+    "welcome": "ようこそ",
+    "subtitle": "ライセンス取得者向けサポート資料"
+  },
+  "notice": {
+    "title": "注意",
+    "text": "<strong>Movve Walletライセンシー</strong>として、ブランドの完全性を維持し、契約書に記載されているすべてのガイドラインとベストプラクティスポリシーに従うことはあなたの責任です。前向きな結果を確保するために、これらのポリシーを尊重することが不可欠です。会社が要求する基準を超える行為は一切認められません。この資料は、認定Movve Walletライセンシーのみが使用できます。",
+    "obs": "<strong>注：このサイトは毎日監視・更新されています。<strong>"
+  },
+  "tutorials": {
+    "title": "チュートリアル動画",
+    "clickHere": "ここをクリック"
+  },
+  "ApnSection": {
+    "presentationTitle": "Movveウォレット事業計画のプレゼンテーション",
+    "pdfButton": "PDFを表示",
+    "pdfDownload": "PDFをダウンロード",
+    "businessPlan": "Movve Wallet ビジネスプランプレゼンテーション"
+  },
+  "hero": {
+    "welcome": "<strong>Movve メンバー</strong>が必要とするすべてが —<br/>一か所に。",
+    "subtitle": "パフォーマンスを追跡し、限定特典にアクセスし、教育と実践的なツールで戦略を進化させましょう。",
+    "badge": "新メンバーエリア",
+    "cta": "ここから始める"
+  },
+  "onboarding": {
+    "steps": {
+      "createAccount": {
+        "title": "アカウント作成と本人確認",
+        "desc1": "プロフィールを作成し、メール/電話番号を確認します。",
+        "desc2": "確認のために書類と自撮り写真を送信します。",
+        "desc3": "KYC承認を待ちます（通知されます）。"
+      },
+      "protectAccount": {
+        "title": "アカウントの保護",
+        "desc1": "2要素認証を有効にします（Google Authenticator iOS）。",
+        "desc2": "取引PINを設定し、アクティブなセッションを確認します。",
+        "desc3": "リカバリーフレーズ/バックアップを安全な場所に保存します。"
+      },
+      "connectWallet": {
+        "title": "ウォレット接続と残高追加",
+        "desc1": "Movve内でUSDTアドレス（TRC20）を生成/コピーします。",
+        "desc2": "ウォレットまたは取引所からこのアドレスに送金します。",
+        "desc3": "オンチェーンのステータスと地域のクレジットを追跡します。"
+      },
+      "activateProducts": {
+        "title": "製品の有効化と監視",
+        "desc1": "Movveウォレット：資産を整理し、利用可能な場合はステーキングを有効にします。",
+        "desc2": "Movve AI：プロフィールに応じて自動化された戦略を有効にします。",
+        "desc3": "Movve Pay：仮想カードを生成し、QRコードで支払います。"
+      }
+    }
+  },
+  "listMovie": {
+    "seeMore": "もっと見る",
+    "tutorialVideos": "MOVVEチュートリアル動画"
+  }
+}

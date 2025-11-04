@@ -1,8 +1,9 @@
-import { useI18n } from "@/context/context";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 export default function NotfoundPage() {
-  const { i18n } = useI18n();
+  const { t, i18n } = useTranslation();
+
   const navigate = useNavigate();
 
   if (!i18n) return null;
@@ -15,9 +16,9 @@ export default function NotfoundPage() {
     >
       <div className="flex flex-col items-center justify-center text-center gap-6 max-w-[21.8rem] w-full">
         <h2 className="text-4xl sm:text-5xl font-bold">
-          {i18n.t(`notFound:title.${i18n.language}`)}
+          {t(`notfound:title`)}
         </h2>
-        <p>{i18n.t(`notFound:description.${i18n.language}`)}</p>
+        <p>{t(`notfound:description`)}</p>
         <button
           className="border rounded-[4px] flex gap-3 items-center justify-center font-bold
           bg-gray-100 text-black border-none hover:bg-gray-300 transition-all duration-200
@@ -25,7 +26,7 @@ export default function NotfoundPage() {
           text-[clamp(12px,1.5vw,16px)] py-2 px-3 md:py-0 sm:px-2 whitespace-nowrap"
           onClick={() => navigate("/", { replace: true })}
         >
-          {i18n.t(`notFound:homeLink.${i18n.language}`)}
+          {t(`notfound:homeLink`)}
         </button>
       </div>
     </div>

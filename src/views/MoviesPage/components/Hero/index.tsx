@@ -1,9 +1,11 @@
 import { type IMovie, type IMovies, request } from "@/mock_videos";
 import { useEffect, useState } from "react";
 import { useI18n } from "@/context/context";
-import Play from "@/assets/icons/Play";
+import Play from "@/assets/icons/movies/Play";
 import { PATH_PAGE } from "@/routes/paths";
 import { Link } from "react-router-dom";
+import bgMovies from "@/assets/images/bg-movies.png";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   movies: IMovies[];
@@ -11,6 +13,7 @@ interface Props {
 export default function Hero({ movies }: Props) {
   const [movie, setMovie] = useState<IMovie>(request?.[0]?.movies[1]);
   const { i18n } = useI18n();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const list = movies;
@@ -28,10 +31,11 @@ export default function Hero({ movies }: Props) {
       <div className="relative w-full h-full">
         <div className="absolute w-full h-full z-10  bg-gradient-to-r from-background/100 via-background/10 to-background/0" />
         <div className="absolute w-full h-full z-10 bg-gradient-to-t from-background/100 via-background/10 to-background/0" />
+
         <img
-          src={movie.thumbnail}
+          src={bgMovies}
           alt={movie.title}
-          className="absolute inset-0 w-full h-full object-cover object-top-left"
+          className="absolute inset-0 w-full h-full object-cover object-center-left"
           loading="lazy"
         />
         <div className="absolute w-full z-20 top-[30%] md:top-[20%] p-4 md:p-8">
@@ -50,9 +54,7 @@ export default function Hero({ movies }: Props) {
              "
             >
               <Play size={26} />
-              <span className="font-bold ">
-                {i18n.t(`watch:${i18n.language}`)}
-              </span>
+              <span className="font-bold ">{t(`actions:Watch`)}</span>
             </Link>
           </div>
         </div>

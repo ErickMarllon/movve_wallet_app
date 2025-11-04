@@ -4,8 +4,8 @@ import { I18nContext } from "./context";
 
 import { CookiesService } from "@/service/cookies";
 import { I18nextProvider } from "react-i18next";
-import i18n from "@/lib/i18n";
-import { allLangs, defaultLang, type IAllLangs } from "@/locales/config-lang";
+import { allLangs, defaultLang, type IAllLangs } from "@/i18n/config-lang";
+import i18n from "@/i18n/i18n";
 
 export const I18nProvider = ({ children }: ProviderProps) => {
   const [lang, setLang] = useState<IAllLangs>();

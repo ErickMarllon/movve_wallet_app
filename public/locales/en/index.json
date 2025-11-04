@@ -1,0 +1,59 @@
+{
+  "header": {
+    "welcome": "Welcome",
+    "subtitle": "Support Material for Licensee"
+  },
+  "notice": {
+    "title": "ATTENTION",
+    "text": "As a <strong>Movve Wallet Licensee</strong>, it is your responsibility to uphold the integrity of the brand and follow all guidelines and best practice policies described in your contract. It is essential that you respect these policies to ensure positive outcomes. No conduct that goes beyond the standards required by the company will be accepted. This material is for the exclusive use of Authorized Movve Wallet Licensees.",
+    "obs": "<strong>NOTE: This site is monitored and updated daily.<strong>"
+  },
+  "tutorials": {
+    "title": "Tutorial Videos",
+    "clickHere": "Click here"
+  },
+  "ApnSection": {
+    "presentationTitle": "Movve Wallet Business Plan Presentation",
+    "pdfButton": "View PDF",
+    "pdfDownload": "Download PDF",
+    "businessPlan": "Movve Wallet Business Plan Presentation"
+  },
+  "hero": {
+    "welcome": "Everything a <strong>Movve member</strong> needs —<br/>in one place.",
+    "subtitle": "Track your performance, access exclusive benefits, and evolve your strategy with education and practical tools.",
+    "badge": "New Members Area",
+    "cta": "Start here"
+  },
+  "onboarding": {
+    "steps": {
+      "createAccount": {
+        "title": "Create account & verify identity",
+        "desc1": "Create your profile and confirm email/phone.",
+        "desc2": "Send document and selfie for verification.",
+        "desc3": "Wait for KYC approval (you will be notified)."
+      },
+      "protectAccount": {
+        "title": "Protect your account",
+        "desc1": "Enable 2FA (Google Authenticator iOS).",
+        "desc2": "Set transaction PIN and review active sessions.",
+        "desc3": "Save your recovery phrase/backup in a secure location."
+      },
+      "connectWallet": {
+        "title": "Connect Wallet & add balance",
+        "desc1": "Generate/copy your USDT address (TRC20) within Movve.",
+        "desc2": "Transfer from your wallet or exchange to this address.",
+        "desc3": "Track on-chain status and credit in your area."
+      },
+      "activateProducts": {
+        "title": "Activate products & monitor",
+        "desc1": "Movve Wallet: organize assets, activate staking when available.",
+        "desc2": "Movve A.I: enable automated strategies according to your profile.",
+        "desc3": "Movve Pay: generate virtual card and use QR for payments."
+      }
+    }
+  },
+  "listMovie": {
+    "seeMore": "See more",
+    "tutorialVideos": "MOVVE Tutorial Videos"
+  }
+}

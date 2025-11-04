@@ -1,4 +1,4 @@
-import Play from "@/assets/icons/Play";
+import Play from "@/assets/icons/movies/Play";
 import { type IMovie } from "@/mock_videos";
 import { PATH_PAGE } from "@/routes/paths";
 import { useNavigate } from "react-router-dom";

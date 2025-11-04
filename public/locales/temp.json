@@ -1,0 +1,63 @@
+{
+  "ns": "nav",
+  "cn": {
+    "GetStarted": "如何开始",
+    "Tutorials": "教程",
+    "PDFPresentation": "PDF演示",
+    "Support": "支持"
+  },
+  "en": {
+    "GetStarted": "Get Started",
+    "Tutorials": "Tutorials",
+    "PDFPresentation": "PDF Presentation",
+    "Support": "Support"
+  },
+  "es": {
+    "GetStarted": "Cómo empezar",
+    "Tutorials": "Tutoriales",
+    "PDFPresentation": "Presentación PDF",
+    "Support": "Soporte"
+  },
+  "it": {
+    "GetStarted": "Come iniziare",
+    "Tutorials": "Tutorial",
+    "PDFPresentation": "Presentazione PDF",
+    "Support": "Supporto"
+  },
+  "ja": {
+    "GetStarted": "始め方",
+    "Tutorials": "チュートリアル",
+    "PDFPresentation": "PDFプレゼンテーション",
+    "Support": "サポート"
+  },
+  "ko": {
+    "GetStarted": "시작하기",
+    "Tutorials": "튜토리얼",
+    "PDFPresentation": "PDF 프레젠테이션",
+    "Support": "지원"
+  },
+  "pt-BR": {
+    "GetStarted": "Como Começar",
+    "Tutorials": "Tutoriais",
+    "PDFPresentation": "Apresentação PDF",
+    "Support": "Suporte"
+  },
+  "pt": {
+    "GetStarted": "Como Começar",
+    "Tutorials": "Tutoriais",
+    "PDFPresentation": "Apresentação PDF",
+    "Support": "Suporte"
+  },
+  "ru": {
+    "GetStarted": "Как начать",
+    "Tutorials": "Обучение",
+    "PDFPresentation": "PDF презентация",
+    "Support": "Поддержка"
+  },
+  "vi": {
+    "GetStarted": "Bắt đầu",
+    "Tutorials": "Hướng dẫn",
+    "PDFPresentation": "Bản trình bày PDF",
+    "Support": "Hỗ trợ"
+  }
+}

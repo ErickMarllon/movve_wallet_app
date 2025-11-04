@@ -1,0 +1,59 @@
+{
+  "header": {
+    "welcome": "欢迎",
+    "subtitle": "被许可人支持资料"
+  },
+  "notice": {
+    "title": "注意",
+    "text": "作为<strong>Movve Wallet被许可方</strong>，您有责任维护品牌完整性，并遵守合同中描述的所有使用指南和最佳实践政策。遵守这些政策对于确保积极成果至关重要。任何超出公司要求标准的行为都将不被接受。本材料仅供Movve Wallet授权被许可方使用。",
+    "obs": "<strong>注意：本网站每日受到监控和更新。<strong>"
+  },
+  "tutorials": {
+    "title": "教程视频",
+    "clickHere": "点击这里"
+  },
+  "ApnSection": {
+    "presentationTitle": "Movve Wallet 商业计划演示",
+    "pdfButton": "查看 PDF",
+    "pdfDownload": "下载PDF",
+    "businessPlan": "Movve Wallet 商业计划书演示"
+  },
+  "hero": {
+    "welcome": "<strong>Movve 会员</strong>所需的一切 —<br/>尽在一处。",
+    "subtitle": "追踪您的表现，访问独家福利，并通过教育和实用工具发展您的策略。",
+    "badge": "新会员专区",
+    "cta": "从这里开始"
+  },
+  "onboarding": {
+    "steps": {
+      "createAccount": {
+        "title": "创建账户和验证身份",
+        "desc1": "创建您的个人资料并确认电子邮件/电话。",
+        "desc2": "发送证件和自拍照进行验证。",
+        "desc3": "等待KYC批准（您将收到通知）。"
+      },
+      "protectAccount": {
+        "title": "保护您的账户",
+        "desc1": "启用双重验证（Google Authenticator iOS）。",
+        "desc2": "设置交易PIN码并查看活跃会话。",
+        "desc3": "将您的助记词/备份保存在安全位置。"
+      },
+      "connectWallet": {
+        "title": "连接钱包和添加余额",
+        "desc1": "在Movve内生成/复制您的USDT地址（TRC20）。",
+        "desc2": "从您的钱包或交易所转账到此地址。",
+        "desc3": "跟踪链上状态和您区域的信用额度。"
+      },
+      "activateProducts": {
+        "title": "激活产品和监控",
+        "desc1": "Movve钱包：组织资产，在可用时激活质押。",
+        "desc2": "Movve AI：根据您的个人资料启用自动策略。",
+        "desc3": "Movve支付：生成虚拟卡并使用二维码进行支付。"
+      }
+    }
+  },
+  "listMovie": {
+    "seeMore": "查看更多",
+    "tutorialVideos": "MOVVE 教程视频"
+  }
+}

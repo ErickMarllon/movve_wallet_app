@@ -1,9 +1,9 @@
 import React from "react";
-import Navbar from "../../Navbar/Navbar";
-import Footer from "../../Footer";
 import useShowOnlyOnRoutes, {
   ACTIVE_COMPONENTS,
 } from "@/hooks/useShowOnlyOnRoutes";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function LayoutWrapper({
   children,
@@ -15,7 +15,7 @@ export default function LayoutWrapper({
 
   return (
     <>
-      {hasNavbar && <Navbar />}
+      {hasNavbar && <Header />}
       {children}
       {hasFooter && <Footer />}
     </>

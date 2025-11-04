@@ -1,43 +1,33 @@
 import { useI18n } from "@/context/context";
-import { allLangs } from "@/locales/config-lang";
-import { useEffect, useRef, useState } from "react";
+import { useClickOutside } from "@/hooks/useClickOutside";
+import { useIsMobile } from "@/hooks/useIsMobile";
+import { allLangs } from "@/i18n/config-lang";
+import { useRef, useState } from "react";
 
 interface Props {
-  isMoble?: boolean;
+  isMobile?: boolean;
 }
-export default function LanguageSelector({ isMoble = false }: Props) {
+export default function LanguageSelector({ isMobile }: Props) {
   const { lang, changeLang } = useI18n();
   const [openDropdown, setOpenDropdown] = useState<boolean>();
   const dropdownRef = useRef<HTMLDivElement>(null);
-
+  const isMoble = useIsMobile();
   const toggleDropdown = () => setOpenDropdown((prev) => !prev);
 
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setOpenDropdown(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  useClickOutside(dropdownRef, () => setOpenDropdown(false));
 
   return (
     <div className="flex flex-col relative" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        className="cursor-pointer gap-2 z-10 transition-all duration-200 inline-flex items-center justify-start px-2 border-none rounded-lg hover:bg-gray-600/20 overflow-hidden"
+        className={`cursor-pointer gap-2 z-10 transition-all duration-200 inline-flex items-center justify-start  ${
+          isMobile ? "py-6 px-2" : "p-2 "
+        }  border-none rounded-lg hover:bg-gray-600/20 overflow-hidden`}
         type="button"
       >
         <span className="cursor-pointer w-full max-w-min gap-2 z-10 transition-all duration-200 inline-flex items-center justify-center p-2 border-none rounded-full overflow-hidden">
           <span className="whitespace-nowrap text-gray-50/90 ">
-            {lang.value}
+            {lang.value.toUpperCase()}
           </span>
           <span className="w-6 h-6 inline-flex relative overflow-hidden items-center justify-center rounded-full">
             <img
