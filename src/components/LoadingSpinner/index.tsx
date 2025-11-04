@@ -4,7 +4,7 @@ export default function LoadingSpinner() {
       <div className="relative flex justify-center items-center">
         <svg
           aria-hidden="true"
-          className="w-16 h-16 sm:w-23 sm:h-23 md:w-24 md:h-24 absolute animate-spin  text-red-600"
+          className="w-16 h-16 sm:w-23 sm:h-23 md:w-24 md:h-24 absolute animate-spin  text-green"
           viewBox="0 0 100 100"
           xmlns="http://www.w3.org/2000/svg"
         >

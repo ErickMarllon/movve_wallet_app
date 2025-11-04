@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 
 declare global {
   interface Window {
@@ -21,30 +20,23 @@ interface PdfCarouselProps {
 export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
   const [pdf, setPdf] = useState<PDFDocument | null>(null);
   const [images, setImages] = useState<string[]>([]);
-  const [pdfRendering, setPdfRendering] = useState<boolean>(false);
-  const [pageRendering, setPageRendering] = useState<boolean>(false);
   const [pdfjsLoaded, setPdfjsLoaded] = useState<boolean>(false);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [isPaused, setIsPaused] = useState(false);
-  const { t } = useTranslation();
 
   async function loadPdfFromUrl(url: string) {
     try {
-      setPdfRendering(true);
       const PDFJS = window.pdfjsLib;
       const _PDF_DOC = await PDFJS.getDocument(url).promise;
       setPdf(_PDF_DOC);
-      setPdfRendering(false);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       console.error("Error loading PDF from URL:", error);
-      setPdfRendering(false);
     }
   }
 
   async function renderPages() {
     if (!pdf) return;
-    setPageRendering(true);
     setImages([]);
     const canvas = document.createElement("canvas");
 
@@ -64,8 +56,6 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
         console.error(`Error rendering page ${i}:`, error);
       }
     }
-
-    setPageRendering(false);
   }
 
   useEffect(() => {
@@ -117,12 +107,6 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
   return (
     <div className="relative w-full z-40 bg-[#011e04]/50 backdrop-blur-[3px] py-0 md:py-10 px-0 md:px-[10%] rounded-4xl md:border border-accent-green ">
       <div className="flex relative rounded-lg w-full h-full max-h-[804px] aspect-[16/9]">
-        {(pageRendering || pdfRendering || !pdfjsLoaded) && (
-          <div className="flex h-full w-full justify-center items-center py-8">
-            <div className="animate-spin te rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
-            <span className="ml-2">{t(`loading:text`)}</span>
-          </div>
-        )}
         <div className="flex overflow-hidden relative rounded-lg w-full h-full max-h-[804px] aspect-[16/9]">
           <div
             className={`relative flex transition-transform duration-700 ease-in-out`}
