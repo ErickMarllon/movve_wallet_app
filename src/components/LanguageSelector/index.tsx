@@ -1,6 +1,5 @@
 import { useI18n } from "@/context/context";
 import { useClickOutside } from "@/hooks/useClickOutside";
-import { useIsMobile } from "@/hooks/useIsMobile";
 import { allLangs } from "@/i18n/config-lang";
 import { useRef, useState } from "react";
 
@@ -11,10 +10,11 @@ export default function LanguageSelector({ isMobile }: Props) {
   const { lang, changeLang } = useI18n();
   const [openDropdown, setOpenDropdown] = useState<boolean>();
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const isMoble = useIsMobile();
   const toggleDropdown = () => setOpenDropdown((prev) => !prev);
 
   useClickOutside(dropdownRef, () => setOpenDropdown(false));
+
+  console.log("🚀 ~ LanguageSelector ~ isMobile:", isMobile);
 
   return (
     <div className="flex flex-col relative" ref={dropdownRef}>
@@ -41,8 +41,8 @@ export default function LanguageSelector({ isMobile }: Props) {
 
       <div
         className={`absolute ${
-          isMoble ? "left-0 top-10" : "right-0 top-8"
-        }  z-50 divide-y divide-gray-100 rounded-lg shadow-sm w-44 bg-gray-700 transform transition-all duration-200
+          isMobile ? "left-[40%] -top-[145%]" : "right-0 top-12"
+        }  z-50 divide-y divide-gray-100 rounded-lg shadow-sm w-44 bg-background/82 backdrop-blur-[10px] transform transition-all duration-200
     ${
       openDropdown
         ? "opacity-100 scale-100"

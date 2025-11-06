@@ -27,7 +27,7 @@ export default function Hero({ movies }: Props) {
   }, [i18n.language, movies]);
 
   return (
-    <div className="relative w-full max-h-[633px] aspect-[16/12]  md:aspect-[16/9] h-full text-white">
+    <div className="relative w-full max-h-[859.58px] aspect-[16/12] md:aspect-[16/9] lg:aspect-[21/9] h-full text-white">
       <div className="relative w-full h-full">
         <div className="absolute w-full h-full z-10  bg-gradient-to-r from-background/100 via-background/10 to-background/0" />
         <div className="absolute w-full h-full z-10 bg-gradient-to-t from-background/100 via-background/10 to-background/0" />
@@ -35,8 +35,9 @@ export default function Hero({ movies }: Props) {
         <img
           src={bgMovies}
           alt={movie.title}
-          className="absolute inset-0 w-full h-full object-cover object-center-left"
+          className="absolute inset-0 w-full h-full object-cover object-bottom-right pt-10 md:pt-8 lg:pt-6"
           loading="lazy"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 1200px"
         />
         <div className="absolute w-full z-20 top-[30%] md:top-[20%] p-4 md:p-8">
           <h1 className="text-[clamp(18px,4vw,36px)] font-bold capitalize">

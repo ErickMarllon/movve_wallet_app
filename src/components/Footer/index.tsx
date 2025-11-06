@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   const { i18n } = useI18n();
   return (
-    <footer className="bg-[#011e04]/50 backdrop-blur-[3px] flex flex-col justify-center mt-16 py-10">
+    <footer className="bg-background/82 backdrop-blur-[10px] flex flex-col justify-center mt-16 py-10">
       <div className="flex relative flex-col items-center gap-2 justify-center">
         <Link
           to={PATH_PAGE.home}
