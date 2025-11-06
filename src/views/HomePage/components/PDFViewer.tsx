@@ -40,7 +40,6 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
     try {
       const PDFJS = window.pdfjsLib;
 
-      // Configuração adicional para compatibilidade
       const loadingTask = PDFJS.getDocument({
         url: url,
         cMapUrl: `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${PDFJS.version}/cmaps/`,
@@ -59,7 +58,6 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
 
     setImages([]);
     const canvas = document.createElement("canvas");
-    const newImages: string[] = [];
 
     try {
       for (let i = 1; i <= pdf.numPages; i++) {
@@ -86,10 +84,8 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
         await page.render(renderContext).promise;
 
         const dataUrl = canvas.toDataURL("image/jpeg");
-        newImages.push(dataUrl);
+        setImages((prev) => [...prev, dataUrl]);
       }
-
-      setImages(newImages);
     } catch (error) {
       console.error("Error rendering pages:", error);
     }
