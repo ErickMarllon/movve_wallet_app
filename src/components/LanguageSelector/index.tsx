@@ -14,8 +14,6 @@ export default function LanguageSelector({ isMobile }: Props) {
 
   useClickOutside(dropdownRef, () => setOpenDropdown(false));
 
-  console.log("🚀 ~ LanguageSelector ~ isMobile:", isMobile);
-
   return (
     <div className="flex flex-col relative" ref={dropdownRef}>
       <button

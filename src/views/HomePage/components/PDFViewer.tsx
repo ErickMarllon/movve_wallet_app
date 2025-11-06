@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 declare global {
   interface Window {
@@ -20,68 +20,92 @@ interface PdfCarouselProps {
 export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
   const [pdf, setPdf] = useState<PDFDocument | null>(null);
   const [images, setImages] = useState<string[]>([]);
-  const [pdfjsLoaded, setPdfjsLoaded] = useState<boolean>(false);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [isPaused, setIsPaused] = useState(false);
-
-  async function loadPdfFromUrl(url: string) {
-    try {
-      const PDFJS = window.pdfjsLib;
-      const _PDF_DOC = await PDFJS.getDocument(url).promise;
-      setPdf(_PDF_DOC);
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (error: any) {
-      console.error("Error loading PDF from URL:", error);
-    }
-  }
-
-  async function renderPages() {
-    if (!pdf) return;
-    setImages([]);
-    const canvas = document.createElement("canvas");
-
-    for (let i = 1; i <= pdf.numPages; i++) {
-      try {
-        const page = await pdf.getPage(i);
-        const viewport = page.getViewport({ scale: 2 });
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-
-        await page.render({ canvasContext: canvas.getContext("2d"), viewport })
-          .promise;
-        const dataUrl = canvas.toDataURL("image/png");
-
-        setImages((prev) => [...prev, dataUrl]);
-      } catch (error) {
-        console.error(`Error rendering page ${i}:`, error);
-      }
-    }
-  }
 
   useEffect(() => {
     const checkPDFJS = () => {
       if (window.pdfjsLib) {
-        setPdfjsLoaded(true);
-        window.pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${window.pdfjsLib.version}/pdf.worker.min.js`;
+        const pdfjsVersion = window.pdfjsLib.version || "3.11.174";
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsVersion}/pdf.worker.min.js`;
       } else {
         setTimeout(checkPDFJS, 100);
       }
     };
+
     checkPDFJS();
   }, []);
 
+  const loadPdfFromUrl = useCallback(async (url: string) => {
+    try {
+      const PDFJS = window.pdfjsLib;
+
+      // Configuração adicional para compatibilidade
+      const loadingTask = PDFJS.getDocument({
+        url: url,
+        cMapUrl: `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${PDFJS.version}/cmaps/`,
+        cMapPacked: true,
+      });
+
+      const _PDF_DOC = await loadingTask.promise;
+      setPdf(_PDF_DOC);
+    } catch (error) {
+      console.error("Error loading PDF from URL:", error);
+    }
+  }, []);
+
+  const renderPages = useCallback(async () => {
+    if (!pdf) return;
+
+    setImages([]);
+    const canvas = document.createElement("canvas");
+    const newImages: string[] = [];
+
+    try {
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const viewport = page.getViewport({ scale: 2 });
+
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        const context = canvas.getContext("2d", {
+          alpha: false,
+          willReadFrequently: true,
+        });
+
+        if (!context) {
+          throw new Error("Could not get canvas context");
+        }
+
+        const renderContext = {
+          canvasContext: context,
+          viewport: viewport,
+        };
+
+        await page.render(renderContext).promise;
+
+        const dataUrl = canvas.toDataURL("image/jpeg");
+        newImages.push(dataUrl);
+      }
+
+      setImages(newImages);
+    } catch (error) {
+      console.error("Error rendering pages:", error);
+    }
+  }, [pdf]);
+
   useEffect(() => {
-    if (pdfUrl && pdfjsLoaded) {
+    if (pdfUrl) {
       loadPdfFromUrl(pdfUrl);
     }
-  }, [pdfUrl, pdfjsLoaded]);
+  }, [pdfUrl, loadPdfFromUrl]);
 
   useEffect(() => {
     if (pdf) {
       renderPages();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pdf]);
+  }, [pdf, renderPages]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
@@ -107,7 +131,12 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
   return (
     <div className="relative w-full z-40 bg-[#011e04]/50 backdrop-blur-[3px] py-0 md:py-10 px-0 md:px-[10%] rounded-4xl md:border border-accent-green ">
       <div className="flex relative rounded-lg w-full h-full max-h-[804px] aspect-[16/9]">
-        <div className="flex overflow-hidden relative rounded-lg w-full h-full max-h-[804px] aspect-[16/9]">
+        <div
+          className="flex overflow-hidden relative rounded-lg w-full h-full max-h-[804px] aspect-[16/9]"
+          style={{
+            WebkitOverflowScrolling: "touch",
+          }}
+        >
           <div
             className={`relative flex transition-transform duration-700 ease-in-out`}
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -120,6 +149,7 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
                   src={image}
                   alt={`PDF page ${index + 1}`}
                   className="w-full h-full object-contain"
+                  loading="lazy"
                 />
               </div>
             ))}
