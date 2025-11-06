@@ -10,16 +10,16 @@ export default function Movie({ movie }: Props) {
 
   return (
     <Link
-      className="min-w-[160px] w-full max-w-[395px] max-h-[570px]
-      inline-block cursor-pointer relative aspect-[9/16] rounded-3xl overflow-hidden border border-accent-green/50"
+      className="min-w-[160px] max-w-[280px]  w-full max-h-[402px]
+      inline-block cursor-pointer relative rounded-3xl overflow-hidden border border-accent-green/50"
       to={PATH_PAGE.movieWatchId(movie.id)}
     >
       <img
         src={movie.thumbnail}
         alt={movie.title}
-        width={395}
-        height={570}
-        className="absolute inset-0 w-full h-full object-cover object-top-left"
+        width={280}
+        height={402}
+        className="object-cover object-top-center"
       />
 
       <div
