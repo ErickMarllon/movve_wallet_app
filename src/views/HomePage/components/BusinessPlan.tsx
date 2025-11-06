@@ -12,8 +12,8 @@ function BusinessPlan() {
     : `/pdf/APN_MOVVE_EN.pdf`;
 
   return (
-    <section className="grid w-full py-6 col-span-10 col-start-2 md:col-span-8 md:col-start-3 relative">
-      <div className="flex flex-col items-center gap-8">
+    <section className="flex flex-col w-full py-6 col-span-10 col-start-2 md:col-span-8 md:col-start-3 relative">
+      <div className="flex  flex-col items-center gap-8">
         <div className="inline-flex w-full justify-center items-center relative">
           <span className="shadow-green before:w-[409px] before:h-[350px] absolute flex h-full -left-10   md:top-0 before:-top-10 before:-left-40">
             <PadlockIcon className="absolute z-20 h-auto w-[calc(100%-10rem)] min-w-[240px] max-w-[360px] -top-30 sm:-top-24 md:-top-36 lg:-top-30 opacity-60 md:opacity-100" />

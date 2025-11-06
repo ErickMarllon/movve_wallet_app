@@ -70,14 +70,12 @@ export default function Row({
           ref={sliderRef}
           id={"slider" + rowID}
           className={`grid grid-flow-col auto-cols-[180px] sm:auto-cols-[220px] md:auto-cols-[240px] lg:auto-cols-[280px] scrollbar-hide whitespace-nowrap scroll-smooth gap-6 ${
-            disableScroll
-              ? "overflow-x-hidden touch-pan-x"
-              : "overflow-x-scroll"
+            disableScroll ? "overflow-x-hidden" : "overflow-x-scroll"
           }`}
-          onScroll={disableScroll ? undefined : checkScrollButtons}
-          onLoad={disableScroll ? undefined : checkScrollButtons}
+          onScroll={checkScrollButtons}
+          onLoad={checkScrollButtons}
           style={{
-            scrollBehavior: disableScroll ? "auto" : "smooth",
+            scrollBehavior: "smooth",
           }}
         >
           {movies.map((movie, id) => (

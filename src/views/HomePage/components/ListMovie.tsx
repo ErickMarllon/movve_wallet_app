@@ -42,7 +42,7 @@ function ListMovie() {
               key={`${index} - ${category.language}`}
               rowID={`${index}`}
               movies={category.movies}
-              disableScroll={true}
+              disableScroll
             />
           ))}
         </div>

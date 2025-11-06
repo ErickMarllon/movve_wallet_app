@@ -60,6 +60,7 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
     const canvas = document.createElement("canvas");
 
     try {
+      const imgs = [];
       for (let i = 1; i <= pdf.numPages; i++) {
         const page = await pdf.getPage(i);
         const viewport = page.getViewport({ scale: 2 });
@@ -84,8 +85,10 @@ export function PDFViewer({ pdfUrl }: PdfCarouselProps) {
         await page.render(renderContext).promise;
 
         const dataUrl = canvas.toDataURL("image/jpeg");
-        setImages((prev) => [...prev, dataUrl]);
+        imgs.push(dataUrl);
+        // setImages((prev) => [...prev, dataUrl]);
       }
+      setImages(imgs);
     } catch (error) {
       console.error("Error rendering pages:", error);
     }
