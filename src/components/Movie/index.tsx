@@ -10,7 +10,7 @@ export default function Movie({ movie }: Props) {
 
   return (
     <Link
-      className="min-w-[160px] max-w-[280px]  w-full max-h-[402px]
+      className="min-w-[160px] max-w-[280px] aspect-[11/16]  w-full  min-h-[240px] max-h-[402px]
       inline-block cursor-pointer relative rounded-3xl overflow-hidden border border-accent-green/50"
       to={PATH_PAGE.movieWatchId(movie.id)}
     >
